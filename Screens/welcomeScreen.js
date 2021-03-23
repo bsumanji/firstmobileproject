@@ -10,10 +10,11 @@ const welcomeScreen = ({ navigation }) => {
       <View style={styles.container}>
       <LinearGradient
         // Background Linear Gradient
-        colors={["#48F10E", "#078716", "#093203","yellow","red", 'transparent']}
+        colors={["orange","white","orange"]}
         style={styles.background}
         start={{x:0,y:0}}
-        end={{x:1,y:1}}
+        end={{x:1,y:0}}
+      
       />
      <Image
         style={{width:300, height:100}}
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
 
     left:0,
     right:0,
-    height:1000,
+    height:600,
 
   },
   
