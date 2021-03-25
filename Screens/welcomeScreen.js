@@ -5,6 +5,7 @@ import homeScreen from './homeScreen';
 //import LinearGradient from 'react-native-linear-gradient'
 import { LinearGradient } from 'expo-linear-gradient';
 
+
 const welcomeScreen = ({ navigation }) => {
     return (
       <View style={styles.container}>
@@ -40,10 +41,11 @@ const styles = StyleSheet.create({
 
   background:{
     position:'absolute',
-
+    flex:1,
     left:0,
     right:0,
-    height:600,
+    height:900,
+    
 
   },
   

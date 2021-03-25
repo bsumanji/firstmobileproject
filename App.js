@@ -1,40 +1,65 @@
-import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button, Input, Image } from 'react';
+import * as React from 'react';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import welcomeScreen from './Screens/welcomeScreen';
 import { createStackNavigator } from '@react-navigation/stack';
-import homeScreen from './Screens/homeScreen';
 import { LinearGradient } from 'expo-linear-gradient';
-
-const Stack = createStackNavigator();
-
-
-const standardColor = {
-  headerStyle: { backgroundColor: "blue"}
-  
-};
+import homeScreen from './Screens/homeScreen';
+import welcomeScreen from './Screens/welcomeScreen';
 
 
-export default function App() {
 
+function LogoTitle() {
   return (
-
+    <View >
     
-    <NavigationContainer>{/* Rest of your app code */}      
-       <Stack.Navigator screenOptions ={standardColor}>
-          <Stack.Screen name ="Welcome" component={welcomeScreen} />
-          <Stack.Screen name ="Home" component={homeScreen} />
-       </Stack.Navigator>
-       
-    </NavigationContainer>
-
-    
+    <Image
+      style={styles.container}
+      source={{
+          uri: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+        }}
+    />
+    </View>
   );
 }
 
+const Stack = createStackNavigator();
 
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Welcome"
+          component={welcomeScreen}
+          
+        />
+        <Stack.Screen name ="Home" component={homeScreen} 
+          options={{ headerTitle: props => <LogoTitle {...props} /> }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
+const styles = StyleSheet.create({
+  container: {
+    padding:10,
+    flex:1,
+    justifyContent:'center',
+    alignItems: 'center',
+    height:30,
+    width:90,
+  },
 
+  background:{
+    position:'absolute',
+
+    left:0,
+    right:0,
+    height:600,
+
+  },
+  
+});
+
+export default App;
