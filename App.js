@@ -5,10 +5,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { LinearGradient } from 'expo-linear-gradient';
 import homeScreen from './Screens/homeScreen';
 import welcomeScreen from './Screens/welcomeScreen';
+import settingScreen from './Screens/settingScreen';
 
 
 
-function LogoTitle() {
+
+
+function HeadSignature() {
   return (
     <View >
     
@@ -26,15 +29,21 @@ const Stack = createStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerTransparent:'true'}}>
-        <Stack.Screen
+    <NavigationContainer >
+     {/**/}
+      <Stack.Navigator screenOptions={{headerTransparent:'true'}} >
+        <Stack.Screen 
           name="Welcome"
-          component={welcomeScreen}
-          
+          component={welcomeScreen}          
         />
+
         <Stack.Screen name ="Home" component={homeScreen} 
-          options={{ headerTitle: props => <LogoTitle {...props} /> }}
+          options={{ headerTitle: props => <HeadSignature {...props} /> }}
+        />
+        
+        <Stack.Screen
+          name = "Settings"
+          component = {settingScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
