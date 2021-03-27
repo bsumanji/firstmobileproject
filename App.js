@@ -27,7 +27,7 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerTransparent:'true'}}>
         <Stack.Screen
           name="Welcome"
           component={welcomeScreen}
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
     flex:1,
     justifyContent:'center',
     alignItems: 'center',
-    height:30,
-    width:90,
+    height:10,
+    width:60,
   },
 
   background:{
