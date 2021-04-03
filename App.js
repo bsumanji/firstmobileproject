@@ -6,9 +6,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import homeScreen from './Screens/homeScreen';
 import welcomeScreen from './Screens/welcomeScreen';
 import settingScreen from './Screens/settingScreen';
-
-
-
+import notificationScreen from './Screens/notificationScreen';
+import chatScreen from './Screens/chatScreen';
+import callScreen from './Screens/callScreen';
 
 
 function HeadSignature() {
@@ -30,8 +30,8 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer >
-     {/**/}
-      <Stack.Navigator screenOptions={{headerTransparent:'true'}} >
+     {/*screenOptions={{headerTransparent:'true'}}*/}
+      <Stack.Navigator  >
         <Stack.Screen 
           name="Welcome"
           component={welcomeScreen}          
@@ -42,11 +42,31 @@ function App() {
         />
         
         <Stack.Screen
-          name = "Settings"
+          name = "Setting"
           component = {settingScreen}
         />
+
+        <Stack.Screen
+          name = "Notification"
+          component = {notificationScreen}
+        />    
+
+        <Stack.Screen
+          name = "Chat"
+          component = {chatScreen}
+        />    
+
+          <Stack.Screen
+          name = "Call"
+          component = {callScreen}
+        />
+
+
+
       </Stack.Navigator>
     </NavigationContainer>
+
+
   );
 }
 

@@ -69,15 +69,15 @@ const homeScreen = ({ navigation }) => {
         headerRight: () => (
         <View style = {{ marginRight : 20, flexDirection:"row-reverse", justifyContent: "space-between", width:120}}>
           <TouchableOpacity activeOpacity={0.5}>
-            <AntDesign name ="bells" size ={24} color = "#0c4da2"/>            
+            <AntDesign name ="bells" size ={24} color = "#0c4da2" onClick={() => navigation.navigate("Notification")}/>            
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5}>
-            <AntDesign name ="message1" size={24} color ="#0c4da2"/>
+            <AntDesign name ="message1" size={24} color ="#0c4da2" onClick={() => navigation.navigate("Chat")}/>
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5}>
-            <AntDesign name ="customerservice" size={24} color ="#0c4da2"/>
+            <AntDesign name ="customerservice" size={24} color ="#0c4da2" onClick={() => navigation.navigate("Call")}/>
           </TouchableOpacity>
-        
+         
         </View>
       ),
               
@@ -86,7 +86,7 @@ const homeScreen = ({ navigation }) => {
 
     return (
     <NavigationContainer independent={true}>  
-      <Tab.Navigator>
+      <Tab.Navigator activeBackgroundColor = "#902f59" activeTintColor = "#0c4da2" inactiveBackgroundColor = "#0c4da2" inactiveTintColor="#902f59" >
         <Tab.Screen name="Home" component={HomeScreen} 
           options = {{
             tabBarLabel : '',
@@ -126,8 +126,9 @@ const homeScreen = ({ navigation }) => {
         <Tab.Screen name="Settings" component={SettingsScreen} 
           options = {{
             tabBarLabel : '',
+            flexDirection:"column",
             tabBarIcon : () => (
-              <AntDesign name = "setting" size={24} color ="#0c4da2" />
+              <AntDesign name = "setting" size={24} color ="#0c4da2"/>
             )
           }} 
         />
