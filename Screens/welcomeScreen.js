@@ -7,6 +7,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 
 const welcomeScreen = ({ navigation }) => {
+  //Splash Config
+  setTimeout(()=> {
+    navigation.replace('Home');
+  },1500);
+  
     return (
       <View style={styles.container}>
       <LinearGradient
@@ -22,12 +27,13 @@ const welcomeScreen = ({ navigation }) => {
         source={{
           uri: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
         }}
-        onPress={() => navigation.navigate("Home")}
-
       />
+       {/*onPress={() => navigation.navigate("Home")} */} 
 
-    </View>
-  );
+      
+
+     </View>
+    );
 }
 
 const styles = StyleSheet.create({
